@@ -1,95 +1,210 @@
-import React from 'react';
-import { Database, Users, GraduationCap, BarChart3, ShieldCheck, Zap } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Users, BookOpen, MapPin, BookMarked, Star, TrendingUp, ArrowRight, Activity } from 'lucide-react';
+import { getDashboardSummary, getStatsTutorsByArea, getStatsTopRating } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 
+// ─── Mini Star Rating ───────────────────────────────────────────────────────────
+const StarRating = ({ score }) => {
+  const full = Math.floor(score || 0);
+  return (
+    <span className="stars">
+      {[1,2,3,4,5].map(i => (
+        <Star key={i} size={13} className={i <= full ? 'star-filled' : 'star-empty'} fill={i <= full ? 'currentColor' : 'none'} />
+      ))}
+    </span>
+  );
+};
+
+// ─── Skeleton loader ──────────────────────────────────────────────────────────
+const KpiSkeleton = () => (
+  <div className="kpi-grid">
+    {[...Array(4)].map((_, i) => (
+      <div key={i} className="card kpi-card" style={{ gap: '0.75rem' }}>
+        <div className="skeleton" style={{ width: 48, height: 48, borderRadius: 12 }} />
+        <div className="skeleton" style={{ width: '60%', height: 14 }} />
+        <div className="skeleton" style={{ width: '40%', height: 28 }} />
+      </div>
+    ))}
+  </div>
+);
+
+// ─── KPI Card ────────────────────────────────────────────────────────────────
+const KpiCard = ({ icon: Icon, label, value, color, bg, link }) => (
+  <div className="card kpi-card card-hover">
+    <div className="kpi-icon-wrapper" style={{ background: bg }}>
+      <Icon size={24} color={color} strokeWidth={2} />
+    </div>
+    <div>
+      <div className="kpi-label">{label}</div>
+      <div className="kpi-value" style={{ color }}>{value ?? '—'}</div>
+    </div>
+    {link && (
+      <Link to={link} className="flex items-center gap-1 text-sm" style={{ color, fontWeight: 600, marginTop: 'auto' }}>
+        Xem chi tiết <ArrowRight size={14} />
+      </Link>
+    )}
+  </div>
+);
+
+// ─── Home Component ────────────────────────────────────────────────────────────
 const Home = () => {
-    const { isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const [summary, setSummary] = useState(null);
+  const [topAreas, setTopAreas] = useState([]);
+  const [topRating, setTopRating] = useState([]);
+  const [loading, setLoading]  = useState(true);
 
-    const stats = [
-        { label: 'Gia sư hệ thống', value: '58,000+', icon: <Users color="#2563eb" />, color: '#eff6ff' },
-        { label: 'Nhu cầu học tập', value: '12,500+', icon: <GraduationCap color="#10b981" />, color: '#f0fdf4' },
-        { label: 'Khu vực kết nối', value: '24 Quận/Huyện', icon: <Database color="#f59e0b" />, color: '#fff7ed' }
-    ];
+  useEffect(() => {
+    Promise.all([
+      getDashboardSummary(),
+      getStatsTutorsByArea(),
+      getStatsTopRating(),
+    ])
+      .then(([sumRes, areaRes, ratingRes]) => {
+        setSummary(sumRes.data.data);
+        setTopAreas(areaRes.data.data?.slice(0, 5) || []);
+        setTopRating(ratingRes.data.data?.slice(0, 5) || []);
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
 
-    return (
-        <div style={{ padding: '1rem' }}>
-            {/* Hero Section */}
-            <header style={{ 
-                textAlign: 'center', 
-                padding: '4rem 2rem', 
-                background: 'white', 
-                borderRadius: '24px', 
-                marginBottom: '3rem',
-                border: '1px solid #e2e8f0'
-            }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#f1f5f9', padding: '8px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: '600', color: '#475569', marginBottom: '1.5rem' }}>
-                    <ShieldCheck size={16} color="#10b981" /> Hệ thống đã được bảo mật & Làm sạch dữ liệu
-                </div>
-                <h1 style={{ fontSize: '3rem', fontWeight: '800', letterSpacing: '-0.02em', marginBottom: '1.5rem', color: '#0f172a' }}>
-                    Trung tâm Điều hành <span style={{ color: '#2563eb' }}>TutorSystem</span>
-                </h1>
-                <p style={{ fontSize: '1.25rem', color: '#64748b', maxWidth: '700px', margin: '0 auto 2.5rem', lineHeight: '1.6' }}>
-                    Nền tảng quản trị kho dữ liệu gia sư thế hệ mới. Tích hợp ETL từ nhiều nguồn dữ liệu, chuẩn hóa Warehouse và hiển thị Dashboard thông minh qua SQL Server.
-                </p>
-                
-                {!isAuthenticated && (
-                    <Link to="/login" className="btn btn-primary" style={{ padding: '12px 32px', fontSize: '16px', borderRadius: '12px' }}>
-                        Bắt đầu Quản trị ngay
-                    </Link>
-                )}
-            </header>
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
-            {/* Quick Stats */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-                {stats.map((item, idx) => (
-                    <div key={idx} className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '2rem' }}>
-                        <div style={{ background: item.color, padding: '1rem', borderRadius: '16px' }}>
-                            {item.icon}
-                        </div>
-                        <div>
-                            <div style={{ fontSize: '14px', color: '#64748b', fontWeight: '500' }}>{item.label}</div>
-                            <div style={{ fontSize: '24px', fontWeight: '800', color: '#0f172a' }}>{item.value}</div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Architecture Summary */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
-                <div className="card" style={{ padding: '2.5rem' }}>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-                        <Zap size={20} color="#f59e0b" /> Kiến trúc Hệ thống Warehouse
-                    </h3>
-                    <ul style={{ listStyle: 'none', padding: 0 }}>
-                        {[
-                            { step: '1. ETL Process', desc: 'Trích xuất từ Excel/CSV và nạp vào SQL Server bằng Python Pandas.' },
-                            { step: '2. Data Warehouse', desc: 'Dữ liệu được chuẩn hóa, phân vùng tại Microsoft SQL Server (SSMS).' },
-                            { step: '3. API Service', desc: 'Node.js Express đóng vai trò cầu nối, cung cấp dữ liệu qua RESTful API.' },
-                            { step: '4. Visual Analysis', desc: 'React & Chart.js hiển thị biểu đồ thống kê chuyên sâu cho Leader.' }
-                        ].map((item, i) => (
-                            <li key={i} style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', borderLeft: '3px solid #e2e8f0' }}>
-                                <div style={{ fontWeight: '700', color: '#1e293b', marginBottom: '4px' }}>{item.step}</div>
-                                <div style={{ fontSize: '14px', color: '#64748b' }}>{item.desc}</div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="card" style={{ padding: '2.5rem', background: '#0f172a', color: 'white' }}>
-                    <h3 style={{ marginBottom: '1.5rem', color: '#38bdf8' }}>Tiêu chuẩn Quản trị</h3>
-                    <p style={{ color: '#94a3b8', fontSize: '15px', lineHeight: '1.7', marginBottom: '2rem' }}>
-                        Hệ thống đảm bảo tính toàn vẹn của dữ liệu gia sư. Mọi thông tin cá nhân đều được mã hóa và bảo mật qua lớp xác thực (Auth Guard).
-                    </p>
-                    <div style={{ background: '#1e293b', padding: '1.5rem', borderRadius: '16px' }}>
-                        <BarChart3 size={40} color="#38bdf8" style={{ marginBottom: '1rem' }} />
-                        <div style={{ fontSize: '13px', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '5px' }}>Trạng thái hệ thống</div>
-                        <div style={{ color: '#10b981', fontWeight: '700' }}>● ONLINE & CONNECTED TO SSMS</div>
-                    </div>
-                </div>
-            </div>
+      {/* ── KPI Section ── */}
+      <section>
+        <div className="flex items-center gap-2" style={{ marginBottom: '1rem' }}>
+          <Activity size={18} color="var(--brand-600)" />
+          <h2 style={{ fontWeight: 700, fontSize: 17 }}>Chỉ số Hệ thống</h2>
         </div>
-    );
+
+        {loading ? <KpiSkeleton /> : (
+          <div className="kpi-grid">
+            <KpiCard
+              icon={Users}
+              label="Gia sư đang hoạt động"
+              value={summary?.tong_gia_su_hoat_dong?.toLocaleString('vi-VN')}
+              color="var(--brand-600)" bg="var(--brand-50)"
+              link="/tutors"
+            />
+            <KpiCard
+              icon={BookOpen}
+              label="Nhu cầu đang mở"
+              value={summary?.tong_nhu_cau_dang_mo?.toLocaleString('vi-VN')}
+              color="#16a34a" bg="#f0fdf4"
+              link="/students"
+            />
+            <KpiCard
+              icon={MapPin}
+              label="Khu vực phủ sóng"
+              value={summary?.tong_khu_vuc}
+              color="#d97706" bg="#fffbeb"
+            />
+            <KpiCard
+              icon={BookMarked}
+              label="Môn học hỗ trợ"
+              value={summary?.tong_mon_hoc}
+              color="#9333ea" bg="#faf5ff"
+            />
+          </div>
+        )}
+      </section>
+
+      {/* ── 2 columns: Top Areas + Top Rating ── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+
+        {/* Top khu vực */}
+        <div className="card" style={{ padding: '1.5rem' }}>
+          <div className="flex items-center justify-between" style={{ marginBottom: '1.25rem' }}>
+            <div>
+              <h3 style={{ fontWeight: 700, fontSize: 15 }}>Top Khu vực · Gia sư</h3>
+              <p className="text-muted text-sm" style={{ marginTop: 2 }}>10 khu vực có nhiều gia sư nhất</p>
+            </div>
+            <Link to="/stats-tutor" className="btn btn-ghost btn-sm">Xem thêm</Link>
+          </div>
+          {loading ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {[...Array(5)].map((_, i) => <div key={i} className="skeleton" style={{ height: 40, borderRadius: 8 }} />)}
+            </div>
+          ) : topAreas.length === 0 ? (
+            <p className="text-muted text-sm">Chưa có dữ liệu khu vực</p>
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              {topAreas.map((area, i) => {
+                const max = topAreas[0]?.count || 1;
+                const pct = Math.round((area.count / max) * 100);
+                return (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span style={{ width: 20, fontSize: 12, fontWeight: 700, color: 'var(--gray-400)', textAlign: 'right' }}>{i + 1}</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3, fontSize: 13, fontWeight: 500 }}>
+                        <span style={{ color: 'var(--gray-800)' }}>{area.label}</span>
+                        <span style={{ color: 'var(--brand-600)', fontWeight: 700 }}>{area.count}</span>
+                      </div>
+                      <div style={{ height: 5, background: 'var(--gray-100)', borderRadius: 9999 }}>
+                        <div style={{ height: '100%', width: `${pct}%`, background: 'var(--brand-500)', borderRadius: 9999, transition: 'width 0.8s var(--ease-out)' }} />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* Top Rating */}
+        <div className="card" style={{ padding: '1.5rem' }}>
+          <div className="flex items-center justify-between" style={{ marginBottom: '1.25rem' }}>
+            <div>
+              <h3 style={{ fontWeight: 700, fontSize: 15 }}>Gia sư được đánh giá cao</h3>
+              <p className="text-muted text-sm" style={{ marginTop: 2 }}>Xếp hạng theo điểm bình quân</p>
+            </div>
+            <Link to="/stats-student" className="btn btn-ghost btn-sm">Xem thêm</Link>
+          </div>
+          {loading ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {[...Array(5)].map((_, i) => <div key={i} className="skeleton" style={{ height: 50, borderRadius: 8 }} />)}
+            </div>
+          ) : topRating.length === 0 ? (
+            <p className="text-muted text-sm">Chưa có dữ liệu đánh giá</p>
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {topRating.map((gs, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', background: i === 0 ? 'var(--brand-50)' : 'var(--gray-50)', borderRadius: 10, border: `1px solid ${i === 0 ? 'var(--brand-200)' : 'var(--gray-100)'}` }}>
+                  <span style={{ width: 24, height: 24, borderRadius: '50%', background: i === 0 ? 'var(--brand-600)' : 'var(--gray-200)', color: i === 0 ? 'white' : 'var(--gray-600)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>
+                    {i + 1}
+                  </span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div className="truncate" style={{ fontWeight: 600, fontSize: 14, color: 'var(--gray-900)' }}>{gs.label}</div>
+                    <div style={{ fontSize: 12, color: 'var(--gray-400)' }}>{gs.ten_khu_vuc}</div>
+                  </div>
+                  <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                    <div style={{ fontWeight: 800, fontSize: 16, color: i === 0 ? 'var(--brand-700)' : 'var(--gray-700)' }}>{gs.count}</div>
+                    <StarRating score={gs.count} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* ── CTA nếu chưa đăng nhập ── */}
+      {!isAuthenticated && (
+        <div style={{ padding: '2.5rem', background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
+          <div>
+            <h2 style={{ fontWeight: 800, fontSize: '1.5rem', color: 'white', marginBottom: 8 }}>Truy cập đầy đủ kho dữ liệu gia sư</h2>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15 }}>Đăng nhập để xem hồ sơ chi tiết, bộ lọc nâng cao và bảng phân tích.</p>
+          </div>
+          <Link to="/login" className="btn btn-lg" style={{ background: 'white', color: 'var(--brand-700)', fontWeight: 700, flexShrink: 0 }}>
+            Đăng nhập ngay <ArrowRight size={18} />
+          </Link>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Home;

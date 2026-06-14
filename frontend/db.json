@@ -1,0 +1,692 @@
+{
+  "top_khu_vuc_gia_su": [
+    {
+      "id": 1,
+      "ten_khu_vuc": "Cầu Giấy",
+      "quan_huyen": "Cầu Giấy",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 87
+    },
+    {
+      "id": 2,
+      "ten_khu_vuc": "Đống Đa",
+      "quan_huyen": "Đống Đa",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 74
+    },
+    {
+      "id": 3,
+      "ten_khu_vuc": "Thủ Đức",
+      "quan_huyen": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 69
+    },
+    {
+      "id": 4,
+      "ten_khu_vuc": "Sơn Trà",
+      "quan_huyen": "Sơn Trà",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_gia_su": 61
+    },
+    {
+      "id": 5,
+      "ten_khu_vuc": "Hải Châu",
+      "quan_huyen": "Hải Châu",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_gia_su": 58
+    },
+    {
+      "id": 6,
+      "ten_khu_vuc": "Bình Thạnh",
+      "quan_huyen": "Bình Thạnh",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 53
+    },
+    {
+      "id": 7,
+      "ten_khu_vuc": "Long Biên",
+      "quan_huyen": "Long Biên",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 48
+    },
+    {
+      "id": 8,
+      "ten_khu_vuc": "Thanh Xuân",
+      "quan_huyen": "Thanh Xuân",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 45
+    },
+    {
+      "id": 9,
+      "ten_khu_vuc": "Quận 7",
+      "quan_huyen": "Quận 7",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 41
+    },
+    {
+      "id": 10,
+      "ten_khu_vuc": "Quận 10",
+      "quan_huyen": "Quận 10",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 38
+    }
+  ],
+  "top_truong_gia_su": [
+    {
+      "id": 1,
+      "ten_truong_hoc": "Đại học Quốc gia Hà Nội",
+      "ten_khu_vuc": "Cầu Giấy",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 95
+    },
+    {
+      "id": 2,
+      "ten_truong_hoc": "Đại học Bách Khoa TP.HCM",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 82
+    },
+    {
+      "id": 3,
+      "ten_truong_hoc": "Đại học Đà Nẵng",
+      "ten_khu_vuc": "Hải Châu",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_gia_su": 76
+    },
+    {
+      "id": 4,
+      "ten_truong_hoc": "Đại học Y Dược TP.HCM",
+      "ten_khu_vuc": "Quận 10",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 63
+    },
+    {
+      "id": 5,
+      "ten_truong_hoc": "Đại học Kinh tế TP.HCM",
+      "ten_khu_vuc": "Sơn Trà",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_gia_su": 57
+    },
+    {
+      "id": 6,
+      "ten_truong_hoc": "Đại học FPT",
+      "ten_khu_vuc": "Sơn Trà",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_gia_su": 51
+    },
+    {
+      "id": 7,
+      "ten_truong_hoc": "Đại học Ngoại thương Hà Nội",
+      "ten_khu_vuc": "Đống Đa",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 45
+    },
+    {
+      "id": 8,
+      "ten_truong_hoc": "Đại học Giao thông Vận tải",
+      "ten_khu_vuc": "Đống Đa",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 40
+    },
+    {
+      "id": 9,
+      "ten_truong_hoc": "Đại học Nông Lâm TP.HCM",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_gia_su": 36
+    },
+    {
+      "id": 10,
+      "ten_truong_hoc": "Đại học Y Hà Nội",
+      "ten_khu_vuc": "Thanh Xuân",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_gia_su": 32
+    }
+  ],
+  "top_nhu_cau_hoc": [
+    {
+      "id": 1,
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Toán",
+      "ten_khu_vuc": "Cầu Giấy",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_hoc_sinh": 78,
+      "so_luong_nhu_cau": 85
+    },
+    {
+      "id": 2,
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Toán",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_hoc_sinh": 65,
+      "so_luong_nhu_cau": 70
+    },
+    {
+      "id": 3,
+      "ten_lop_hoc": "Lớp 9",
+      "cap_hoc": "thcs",
+      "ten_mon_hoc": "Tiếng Anh",
+      "ten_khu_vuc": "Hải Châu",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_hoc_sinh": 60,
+      "so_luong_nhu_cau": 64
+    },
+    {
+      "id": 4,
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Tiếng Anh",
+      "ten_khu_vuc": "Đống Đa",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_hoc_sinh": 55,
+      "so_luong_nhu_cau": 58
+    },
+    {
+      "id": 5,
+      "ten_lop_hoc": "Lớp 10",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Vật lý",
+      "ten_khu_vuc": "Sơn Trà",
+      "tinh_thanh": "Đà Nẵng",
+      "so_luong_hoc_sinh": 48,
+      "so_luong_nhu_cau": 52
+    },
+    {
+      "id": 6,
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Ngữ văn",
+      "ten_khu_vuc": "Long Biên",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_hoc_sinh": 43,
+      "so_luong_nhu_cau": 47
+    },
+    {
+      "id": 7,
+      "ten_lop_hoc": "Lớp 6",
+      "cap_hoc": "thcs",
+      "ten_mon_hoc": "Toán",
+      "ten_khu_vuc": "Bình Thạnh",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_hoc_sinh": 40,
+      "so_luong_nhu_cau": 43
+    },
+    {
+      "id": 8,
+      "ten_lop_hoc": "Lớp 11",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Toán",
+      "ten_khu_vuc": "Thanh Xuân",
+      "tinh_thanh": "Hà Nội",
+      "so_luong_hoc_sinh": 37,
+      "so_luong_nhu_cau": 40
+    },
+    {
+      "id": 9,
+      "ten_lop_hoc": "Lớp 9",
+      "cap_hoc": "thcs",
+      "ten_mon_hoc": "Vật lý",
+      "ten_khu_vuc": "Quận 7",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_hoc_sinh": 33,
+      "so_luong_nhu_cau": 36
+    },
+    {
+      "id": 10,
+      "ten_lop_hoc": "Lớp 10",
+      "cap_hoc": "thpt",
+      "ten_mon_hoc": "Tiếng Anh",
+      "ten_khu_vuc": "Quận 10",
+      "tinh_thanh": "Hồ Chí Minh",
+      "so_luong_hoc_sinh": 30,
+      "so_luong_nhu_cau": 33
+    }
+  ],
+  "top_gia_su_xep_hang": [
+    {
+      "id": 1,
+      "ma_gia_su": "GS_EX_0014",
+      "ho_ten": "Dương Thị Hân",
+      "ten_khu_vuc": "Quận 7",
+      "ten_truong_hoc": "Đại học Thương mại",
+      "diem_trung_binh": 4.99,
+      "so_luot_danh_gia": 18
+    },
+    {
+      "id": 2,
+      "ma_gia_su": "GS006",
+      "ho_ten": "Đặng Tiến Đạt",
+      "ten_khu_vuc": "Cầu Giấy",
+      "ten_truong_hoc": "Đại học Quốc gia Hà Nội",
+      "diem_trung_binh": 4.97,
+      "so_luot_danh_gia": 2
+    },
+    {
+      "id": 3,
+      "ma_gia_su": "GS_EX_0003",
+      "ho_ten": "Đỗ Thái Khoa",
+      "ten_khu_vuc": "Quận 10",
+      "ten_truong_hoc": "Đại học Y Dược TP.HCM",
+      "diem_trung_binh": 4.93,
+      "so_luot_danh_gia": 15
+    },
+    {
+      "id": 4,
+      "ma_gia_su": "GS004",
+      "ho_ten": "Phạm Đức Long",
+      "ten_khu_vuc": "Đống Đa",
+      "ten_truong_hoc": "Đại học Bách Khoa Hà Nội",
+      "diem_trung_binh": 4.92,
+      "so_luot_danh_gia": 2
+    },
+    {
+      "id": 5,
+      "ma_gia_su": "GS001",
+      "ho_ten": "Nguyễn Minh Anh",
+      "ten_khu_vuc": "Cầu Giấy",
+      "ten_truong_hoc": "Đại học Sư phạm Hà Nội",
+      "diem_trung_binh": 4.85,
+      "so_luot_danh_gia": 2
+    },
+    {
+      "id": 6,
+      "ma_gia_su": "GS_EX_0017",
+      "ho_ten": "Ngô Ngọc Hân",
+      "ten_khu_vuc": "Cầu Giấy",
+      "ten_truong_hoc": "Đại học Xây dựng Hà Nội",
+      "diem_trung_binh": 4.69,
+      "so_luot_danh_gia": 12
+    },
+    {
+      "id": 7,
+      "ma_gia_su": "GS_EX_0005",
+      "ho_ten": "Ngô Đình Tuấn",
+      "ten_khu_vuc": "Sơn Trà",
+      "ten_truong_hoc": "Đại học Kinh tế TP.HCM",
+      "diem_trung_binh": 4.68,
+      "so_luot_danh_gia": 10
+    },
+    {
+      "id": 8,
+      "ma_gia_su": "GS_EX_0013",
+      "ho_ten": "Bùi Mai Hân",
+      "ten_khu_vuc": "Hải Châu",
+      "ten_truong_hoc": "Đại học Y Dược TP.HCM",
+      "diem_trung_binh": 4.68,
+      "so_luot_danh_gia": 9
+    },
+    {
+      "id": 9,
+      "ma_gia_su": "GS_EX_0001",
+      "ho_ten": "Đặng Hải Tuấn",
+      "ten_khu_vuc": "Long Biên",
+      "ten_truong_hoc": "Đại học Nông Lâm TP.HCM",
+      "diem_trung_binh": 4.64,
+      "so_luot_danh_gia": 14
+    },
+    {
+      "id": 10,
+      "ma_gia_su": "GS_EX_0009",
+      "ho_ten": "Nguyễn Thanh Nhung",
+      "ten_khu_vuc": "Quận 10",
+      "ten_truong_hoc": "Đại học Đà Nẵng",
+      "diem_trung_binh": 4.64,
+      "so_luot_danh_gia": 11
+    }
+  ],
+  "tai_khoan": [
+    {
+      "id": 1,
+      "tai_khoan_id": 1,
+      "username": "admin",
+      "vai_tro": "admin",
+      "lien_ket_id": null,
+      "trang_thai": "hoat_dong"
+    },
+    {
+      "id": 2,
+      "tai_khoan_id": 2,
+      "username": "gs_demo",
+      "vai_tro": "gia_su",
+      "lien_ket_id": 1,
+      "trang_thai": "hoat_dong"
+    },
+    {
+      "id": 3,
+      "tai_khoan_id": 3,
+      "username": "hs_demo",
+      "vai_tro": "hoc_sinh",
+      "lien_ket_id": 1,
+      "trang_thai": "hoat_dong"
+    }
+  ],
+  "students": [
+    {
+      "id": 1001,
+      "du_lieu_nhu_cau_hoc_id": 1001,
+      "hoc_sinh_id": 50,
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Cầu Giấy",
+      "tinh_thanh": "Hà Nội",
+      "hinh_thuc_hoc": "online",
+      "muc_tieu_hoc_tap": "Ôn thi đại học khối A",
+      "ngan_sach_toi_da_gio": 150000,
+      "so_buoi_moi_tuan": 3,
+      "trang_thai_nhu_cau": "tam_dung",
+      "ngay_dang": "2026-06-01"
+    },
+    {
+      "id": 1002,
+      "du_lieu_nhu_cau_hoc_id": 1002,
+      "hoc_sinh_id": 100,
+      "ten_mon_hoc": "Tiếng Anh",
+      "ten_lop_hoc": "Lớp 9",
+      "cap_hoc": "thcs",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Nâng điểm học kỳ",
+      "ngan_sach_toi_da_gio": 120000,
+      "so_buoi_moi_tuan": 2,
+      "trang_thai_nhu_cau": "tam_dung",
+      "ngay_dang": "2026-06-01"
+    },
+    {
+      "id": 1003,
+      "du_lieu_nhu_cau_hoc_id": 1003,
+      "hoc_sinh_id": 150,
+      "ten_mon_hoc": "Vật lý",
+      "ten_lop_hoc": "Lớp 10",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Hải Châu",
+      "tinh_thanh": "Đà Nẵng",
+      "hinh_thuc_hoc": "ca_hai",
+      "muc_tieu_hoc_tap": "Cải thiện điểm trung bình",
+      "ngan_sach_toi_da_gio": 100000,
+      "so_buoi_moi_tuan": 2,
+      "trang_thai_nhu_cau": "tam_dung",
+      "ngay_dang": "2026-06-01"
+    },
+    {
+      "id": 1004,
+      "du_lieu_nhu_cau_hoc_id": 1004,
+      "hoc_sinh_id": 200,
+      "ten_mon_hoc": "Ngữ văn",
+      "ten_lop_hoc": "Lớp 6",
+      "cap_hoc": "thcs",
+      "ten_khu_vuc": "Long Biên",
+      "tinh_thanh": "Hà Nội",
+      "hinh_thuc_hoc": "online",
+      "muc_tieu_hoc_tap": "Học hè bổ sung",
+      "ngan_sach_toi_da_gio": 80000,
+      "so_buoi_moi_tuan": 1,
+      "trang_thai_nhu_cau": "tam_dung",
+      "ngay_dang": "2026-06-01"
+    },
+    {
+      "id": 1005,
+      "du_lieu_nhu_cau_hoc_id": 1005,
+      "hoc_sinh_id": 250,
+      "ten_mon_hoc": "Hóa học",
+      "ten_lop_hoc": "Lớp 11",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Quận 7",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Ôn thi học kỳ cuối năm",
+      "ngan_sach_toi_da_gio": 130000,
+      "so_buoi_moi_tuan": 3,
+      "trang_thai_nhu_cau": "tam_dung",
+      "ngay_dang": "2026-06-01"
+    },
+    {
+      "id": 1006,
+      "hoc_sinh_id": 1001,
+      "ma_hoc_sinh": "HS_1001",
+      "ho_ten": "Học sinh Demo 1001",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "trang_thai": "hs_moi"
+    }
+  ],
+  "tutor_profile": [
+    {
+      "id": 1,
+      "gia_su_id": 1,
+      "ma_gia_su": "GS_DEMO_001",
+      "ho_ten": "Gia sư Demo",
+      "gioi_tinh": "Nam",
+      "ten_truong_hoc": "Đại học Bách Khoa TP.HCM",
+      "trinh_do_hoc_van": "Đại học",
+      "chuyen_nganh": "Toán học ứng dụng",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "gia_theo_gio": 120000,
+      "trang_thai": "hoat_dong",
+      "diem_trung_binh": 4.5,
+      "so_luot_danh_gia": 12,
+      "mon_day": [
+        "Toán",
+        "Vật lý",
+        "Tiếng Anh",
+        "Lịch sử"
+      ],
+      "mo_ta": "Gia sư có 3 năm kinh nghiệm, chuyên ôn thi đại học khối A và B. Phương pháp dạy trực quan, chú trọng hiểu bản chất."
+    }
+  ],
+  "teaching_history": [
+    {
+      "id": 1,
+      "gia_su_id": 1,
+      "ten_hoc_sinh": "Nguyễn Văn An",
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 12",
+      "ten_khu_vuc": "Cầu Giấy",
+      "hinh_thuc_hoc": "online",
+      "muc_tieu_hoc_tap": "Ôn thi đại học khối A",
+      "ngay_ghep": "2026-05-10",
+      "trang_thai": "da_ghep",
+      "diem_danh_gia": 5
+    },
+    {
+      "id": 2,
+      "gia_su_id": 1,
+      "ten_hoc_sinh": "Trần Thị Bình",
+      "ten_mon_hoc": "Vật lý",
+      "ten_lop_hoc": "Lớp 11",
+      "ten_khu_vuc": "Thủ Đức",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Nâng điểm học kỳ 2",
+      "ngay_ghep": "2026-04-22",
+      "trang_thai": "da_ghep",
+      "diem_danh_gia": 4.5
+    },
+    {
+      "id": 3,
+      "gia_su_id": 1,
+      "ten_hoc_sinh": "Lê Văn Cường",
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 10",
+      "ten_khu_vuc": "Bình Thạnh",
+      "hinh_thuc_hoc": "ca_hai",
+      "muc_tieu_hoc_tap": "Học thêm bổ trợ",
+      "ngay_ghep": "2026-03-15",
+      "trang_thai": "da_ghep",
+      "diem_danh_gia": 4.8
+    }
+  ],
+  "available_demands": [
+    {
+      "id": 1,
+      "du_lieu_nhu_cau_hoc_id": 101,
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "online",
+      "muc_tieu_hoc_tap": "Ôn thi đại học khối A",
+      "ngan_sach_toi_da_gio": 150000,
+      "so_buoi_moi_tuan": 3,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-10"
+    },
+    {
+      "id": 2,
+      "du_lieu_nhu_cau_hoc_id": 102,
+      "ten_mon_hoc": "Vật lý",
+      "ten_lop_hoc": "Lớp 11",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Quận 7",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Nâng điểm học kỳ 2",
+      "ngan_sach_toi_da_gio": 130000,
+      "so_buoi_moi_tuan": 2,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-09"
+    },
+    {
+      "id": 3,
+      "du_lieu_nhu_cau_hoc_id": 103,
+      "ten_mon_hoc": "Tiếng Anh",
+      "ten_lop_hoc": "Lớp 9",
+      "cap_hoc": "thcs",
+      "ten_khu_vuc": "Bình Thạnh",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "ca_hai",
+      "muc_tieu_hoc_tap": "Luyện thi vào lớp 10",
+      "ngan_sach_toi_da_gio": 100000,
+      "so_buoi_moi_tuan": 3,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-08"
+    },
+    {
+      "id": 4,
+      "du_lieu_nhu_cau_hoc_id": 104,
+      "ten_mon_hoc": "Hóa học",
+      "ten_lop_hoc": "Lớp 12",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "online",
+      "muc_tieu_hoc_tap": "Ôn thi đại học khối B",
+      "ngan_sach_toi_da_gio": 140000,
+      "so_buoi_moi_tuan": 3,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-07"
+    },
+    {
+      "id": 5,
+      "du_lieu_nhu_cau_hoc_id": 105,
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 10",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Cầu Giấy",
+      "tinh_thanh": "Hà Nội",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Học thêm bổ trợ",
+      "ngan_sach_toi_da_gio": 80000,
+      "so_buoi_moi_tuan": 2,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-06"
+    }
+  ],
+  "my_demands": [
+    {
+      "id": 1,
+      "du_lieu_nhu_cau_hoc_id": 201,
+      "hoc_sinh_id": 1,
+      "ten_mon_hoc": "Tiếng Anh",
+      "ten_lop_hoc": "Lớp 10",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "online",
+      "muc_tieu_hoc_tap": "Nâng điểm học kỳ",
+      "ngan_sach_toi_da_gio": 100000,
+      "so_buoi_moi_tuan": 2,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-05"
+    },
+    {
+      "id": 2,
+      "du_lieu_nhu_cau_hoc_id": 202,
+      "hoc_sinh_id": 1,
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 10",
+      "cap_hoc": "thpt",
+      "ten_khu_vuc": "Thủ Đức",
+      "tinh_thanh": "Hồ Chí Minh",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Học thêm hè",
+      "ngan_sach_toi_da_gio": 120000,
+      "so_buoi_moi_tuan": 3,
+      "trang_thai_nhu_cau": "da_ghep",
+      "ngay_dang": "2026-05-20"
+    },
+    {
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 12",
+      "ten_khu_vuc": "Cầu Giấy",
+      "hinh_thuc_hoc": "online",
+      "ngan_sach_toi_da_gio": 120000,
+      "so_buoi_moi_tuan": 2,
+      "muc_tieu_hoc_tap": "8d dai hoc",
+      "hoc_sinh_id": 1,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-13",
+      "id": 3
+    },
+    {
+      "ten_mon_hoc": "Vật lý",
+      "ten_lop_hoc": "Lớp 12",
+      "ten_khu_vuc": "Long Biên",
+      "hinh_thuc_hoc": "online",
+      "ngan_sach_toi_da_gio": 120000,
+      "so_buoi_moi_tuan": 2,
+      "muc_tieu_hoc_tap": "hk",
+      "hoc_sinh_id": 1,
+      "trang_thai_nhu_cau": "dang_tim_gia_su",
+      "ngay_dang": "2026-06-13",
+      "id": 4
+    }
+  ],
+  "match_history": [
+    {
+      "id": 1,
+      "hoc_sinh_id": 1,
+      "gia_su_id": 1,
+      "ten_gia_su": "Gia sư Demo",
+      "ma_gia_su": "GS_DEMO_001",
+      "ten_truong_hoc": "Đại học Bách Khoa TP.HCM",
+      "trinh_do_hoc_van": "Đại học",
+      "chuyen_nganh": "Toán học ứng dụng",
+      "mon_day": [
+        "Toán",
+        "Vật lý"
+      ],
+      "gia_theo_gio": 120000,
+      "diem_trung_binh_gia_su": 4.5,
+      "so_buoi_da_day": 15,
+      "ten_mon_hoc": "Toán",
+      "ten_lop_hoc": "Lớp 10",
+      "ten_khu_vuc": "Thủ Đức",
+      "hinh_thuc_hoc": "truc_tiep",
+      "muc_tieu_hoc_tap": "Học thêm hè",
+      "ngay_ghep": "2026-05-22",
+      "trang_thai": "da_ghep",
+      "co_buoi_thu": true,
+      "trang_thai_buoi_thu": "hoan_thanh",
+      "ngay_buoi_thu": "2026-05-22",
+      "da_xac_nhan_tiep_tuc": true,
+      "diem_danh_gia": 4.8,
+      "ghi_chu": "Gia sư rất nhiệt tình, giải thích rõ ràng dễ hiểu"
+    }
+  ]
+}
